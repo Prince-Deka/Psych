@@ -13,6 +13,10 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)  # Enabling CORS
 
 
+@app.route('/')
+def home():
+    return "Predict server is running"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Ensure the static folder exists
@@ -59,4 +63,4 @@ def predict():
     return jsonify({'emotion': final_prediction})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
