@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-// import './Login.css'; // Uncomment and update if you have a CSS file
+import '../Signup/FormStyles.css';
 import { useNavigate } from 'react-router-dom';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
   const navigate = useNavigate();
@@ -43,8 +44,10 @@ function Login() {
   };
 
   return (
-    <div className="form-container">
+    <div className="loginWrapper">
+      <div className="form-container login-container">
       <form onSubmit={handleSubmit}>
+        <label className="form-label">Log In</label>
         {['email', 'password'].map(field => (
           <div className="input-container" key={field}>
             <input
@@ -53,14 +56,15 @@ function Login() {
               name={field}
               value={formData[field]}
               onChange={handleChange}
+              placeholder={field}
               required
               className="form-input"
             />
-            <label htmlFor={field} className="form-label">{field.charAt(0).toUpperCase() + field.slice(1)}</label>
           </div>
         ))}
         <button type="submit" className="form-button">Log In</button> 
       </form>
+    </div>
     </div>
   );
 }
