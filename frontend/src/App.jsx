@@ -8,11 +8,7 @@ import Landing from './components/Landing/Landing.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Predict from './components/Predict/Predict.jsx'
 import Login from './components/Login/Login.jsx';
-
-
 function App() {
-
-
   return (
     <>
       <Router>
