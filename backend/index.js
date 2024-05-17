@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 
 const app = express();
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || 2000;
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://prince12:prince12@cluster0.v6tq54w.mongodb.net/psych', {
@@ -41,6 +41,10 @@ userSchema.pre('save', async function(next) {
 const User = mongoose.model('User', userSchema);
 
 // Routes
+
+app.get('/', (req, res)=>{
+    res.send('backend working');
+})
 app.post('/signup', async (req, res) => {
     try {
         const newUser = new User(req.body);

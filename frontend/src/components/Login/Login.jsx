@@ -19,7 +19,11 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('https://psychbackend.onrender.com/login', { // http://localhost:1000/login for local
+
+    https://psychbackend.onrender.com/login for hosted
+    // http://localhost:1000/login for local
+    // http://13.127.222.108:2000/login for aws
+    fetch('http://13.127.222.108:2000/login', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -25,7 +25,11 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('https://psychbackend.onrender.com/signup', {  // http://localhost:1000/signup for local
+
+    // https://psychbackend.onrender.com/signup
+    // http://localhost:1000/signup for local
+    // http://13.127.222.108:2000/signup for aws
+    fetch('http://13.127.222.108:2000/signup', {  
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

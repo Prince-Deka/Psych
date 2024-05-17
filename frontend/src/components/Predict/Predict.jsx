@@ -25,9 +25,13 @@ function Home() {
             const formData = new FormData();
             formData.append('file1', blob, 'image.jpg');
 
+            // https://psychpredictserver.onrender.com/predict for hosted
+            // http://127.0.0.1:5000/predict for running in loca
+            // http://13.127.222.108/predict for aws
+
             try {
-                const response = await fetch('https://psychpredictserver.onrender.com/predict', {
-                    // http://127.0.0.1:5000/predict for running in local
+                const response = await fetch('http://13.127.222.108/predict', {
+                    
                     method: 'POST',
                     body: formData  // Do not set 'Content-Type' header, let the browser set it
                 });
